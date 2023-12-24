@@ -1,0 +1,41 @@
+#TODO
+spring:
+  #==============================================================
+  #spring-cloud-stream-Kafka配置 开始
+  #==============================================================
+  cloud:
+    stream:
+      default-binder: kafka #Default binder
+      bindings:
+        #缺省的输入、输出通道（配置自己定义的通道与哪个中间件交互）
+        es_default_input:
+          destination: es_default_topic
+          binder: kafka
+          group: es_default_group
+          consumer:
+            concurrency: 2 #入站消费者的并发性
+        es_default_output:
+          destination: es_default_topic
+          binder: kafka
+          content-type: text/plain
+        #告警的输入、输出通道（多主题、分组测试用，实际开发中根据业务需求定义）
+        es_alarm_input:
+          destination: es_alarm_topic
+          binder: kafka
+          group: es_alarm_group
+        es_alarm_output:
+          destination: es_alarm_topic
+          binder: kafka
+          content-type: text/plain
+        #kafka配置
+      kafka:
+        binder:
+          autoCreateTopics: true   # 自动创建topics
+          autoAddPartitions: true
+          replicationFactor: 1
+          brokers: cm02:9092,cm03:9092,cm04:9092  #Kafka的服务端列表，cm02为集群节点，在本地host配置，这里替换成你的IP即可
+          zkNodes: cm01:2181,cm02:2181,cm03:2181  #Kafka服务端连接的ZooKeeper节点列表
+          requiredAcks: 1
+  #==============================================================
+  #spring-cloud-stream-Kafka配置 结束
+  #==============================================================

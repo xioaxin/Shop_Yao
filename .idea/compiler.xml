@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-common/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-auth/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-ware/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-user/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-order/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-product/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-cart/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/shop-mino/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop-config" />
+        <module name="shop-mino" />
+        <module name="shop-cart" />
+        <module name="shop-order" />
+        <module name="shop-ware" />
+        <module name="shop-user" />
+        <module name="shop-product" />
+        <module name="shop-common" />
+        <module name="shop-auth" />
+        <module name="shop-kafka" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shop-register" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="shop-auth" options="-parameters" />
+      <module name="shop-cart" options="-parameters" />
+      <module name="shop-common" options="-parameters" />
+      <module name="shop-config" options="-parameters" />
+      <module name="shop-kafka" options="-parameters" />
+      <module name="shop-mino" options="-parameters" />
+      <module name="shop-order" options="-parameters" />
+      <module name="shop-product" options="-parameters" />
+      <module name="shop-register" options="-parameters" />
+      <module name="shop-user" options="-parameters" />
+      <module name="shop-ware" options="-parameters" />
+    </option>
+  </component>
+</project>
